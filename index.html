@@ -221,5 +221,23 @@ AOS.init({duration:1000, once:true});
   <a href="https://youtube.com/@senumodz" style="color:#38bdf8;">YouTube</a> | 
   <a href="https://t.me/senumodz" style="color:#38bdf8;">Telegram</a>
 </footer>
+<audio id="bgMusic" autoplay loop>
+  <source src="assets/music/background.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  const music = document.getElementById("bgMusic");
+
+  // Force play on load (desktop)
+  window.addEventListener("load", () => {
+    music.play().catch(() => {});
+  });
+
+  // Force play after first user interaction (mobile)
+  document.addEventListener("click", () => {
+    music.play();
+  }, { once: true });
+</script>
+
 </body>
 </html>
