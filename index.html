@@ -5,278 +5,207 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SENU MD V5 | WhatsApp Bot</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+<meta name="description" content="SENU MD V5 WhatsApp Bot - Auto-reply, group management, AI, media conversion, and panel sales.">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-
-body{
-  background:#0b0f19;
-  color:#fff;
-  overflow-x:hidden;
-}
-
-/* NAV */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:15px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,0.4);
-  backdrop-filter:blur(10px);
-  z-index:1000;
-}
-
-nav .logo{
-  font-weight:700;
-  font-size:20px;
-  color:#38bdf8;
-}
-
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:20px;
-  font-size:14px;
-}
-
-nav a:hover{color:#38bdf8}
-
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-}
-
-.hero h1{
-  font-size:48px;
-}
-
-.hero p{
-  margin-top:15px;
-  color:#cbd5e1;
-}
-
-.btns{
-  margin-top:25px;
-}
-
-.btns a{
-  padding:12px 25px;
-  margin:10px;
-  background:#38bdf8;
-  color:#000;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.btns a.secondary{
-  background:transparent;
-  border:1px solid #38bdf8;
-  color:#38bdf8;
-}
-
-/* STATUS */
-.status{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:20px;
-}
-
-.dot{
-  width:10px;
-  height:10px;
-  background:#22c55e;
-  border-radius:50%;
-  animation:pulse 1.5s infinite;
-}
-
-@keyframes pulse{
-  0%{box-shadow:0 0 0 0 rgba(34,197,94,.7)}
-  70%{box-shadow:0 0 0 10px rgba(34,197,94,0)}
-  100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}
-}
-
-/* SECTIONS */
-.section{
-  padding:80px 10%;
-}
-
-.section h2{
-  text-align:center;
-  margin-bottom:40px;
-  font-size:32px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:rgba(255,255,255,0.05);
-  border-radius:15px;
-  padding:25px;
-  backdrop-filter:blur(15px);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 10px 40px rgba(0,0,0,.5);
-}
-
-/* BUY */
-.buy a{
-  display:inline-block;
-  margin-top:15px;
-  color:#38bdf8;
-  text-decoration:none;
-}
-
-/* COMMANDS */
-.card ul{
-  list-style:none;
-  margin-top:10px;
-}
-
-.card ul li{
-  font-size:14px;
-  color:#cbd5e1;
-}
-
-/* FOOTER */
-footer{
-  background:#020617;
-  padding:30px;
-  text-align:center;
-  font-size:14px;
-  color:#94a3b8;
-}
-
-footer a{
-  color:#38bdf8;
-  text-decoration:none;
-  margin:0 8px;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
 
 <body>
+<div class="grid"></div>
 
-<!-- BACKGROUND MUSIC -->
-<audio autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
+<!-- Navbar -->
 <nav>
-  <div class="logo">SENU MD V5</div>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#features">Features</a>
-    <a href="#buy">Buy</a>
-    <a href="#commands">Commands</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <a href="#home">Home</a>
+  <a href="#features">Features</a>
+  <a href="#commands">Commands</a>
+  <a href="#projects">Community</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<section class="hero" id="home" data-aos="fade-up">
-  <h1>SENU MD V5</h1>
-  <p>Advanced WhatsApp Automation Bot</p>
+<!-- Dark/Light Mode Toggle -->
+<button id="themeToggle" style="position:fixed;top:20px;right:20px;padding:10px 15px;z-index:1000;">
+  Toggle Theme
+</button>
 
+<!-- Floating Buy Button -->
+<a href="#buy-panels" class="buy-floating">Buy Panels</a>
+
+<!-- Home / Status -->
+<section class="section" id="home">
   <div class="status">
     <div class="dot"></div>
-    <span>System Online • v5.0.2</span>
-  </div>
-
-  <div class="btns">
-    <a href="#buy">Buy Panel</a>
-    <a href="pair.html" class="secondary">Get Pair Code</a>
+    <span>System Status: Online | Version: 5.0.2</span>
   </div>
 </section>
 
-<section class="section" id="features">
-  <h2 data-aos="fade-up">Features</h2>
-  <div class="grid">
-    <div class="card" data-aos="fade-up">🤖 Auto Replies & AI</div>
-    <div class="card" data-aos="fade-up">👥 Group Management</div>
-    <div class="card" data-aos="fade-up">🎨 Stickers & Media</div>
-    <div class="card" data-aos="fade-up">📥 Downloaders</div>
+<!-- Hero -->
+<section class="section" data-aos="fade-up">
+  <h1>Welcome to SENU MD V5</h1>
+  <h2>Your Advanced WhatsApp Automation Bot</h2>
+  <p>
+    Automate messaging, manage groups, use AI features, convert media,
+    and deploy your bot easily using our premium panels.
+  </p>
+  <div class="buttons">
+    <a href="#buy-panels">Buy Panels</a>
+    <a href="pair.html">Get Pair Code</a>
   </div>
 </section>
 
-<section class="section" id="buy">
-  <h2 data-aos="fade-up">Buy Panels</h2>
-  <div class="grid">
-    <div class="card buy">
-      <h3>Panel Only</h3>
-      <p>500 LKR</p>
-      <a href="https://wa.me/94743400406">Buy via WhatsApp</a>
+<!-- How It Works -->
+<section class="section" id="features" data-aos="fade-up">
+  <h2>How It Works</h2>
+  <div class="grid-features">
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Step 1</h3>
+      <p>Purchase a Panel</p>
     </div>
-    <div class="card buy">
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <h3>Step 2</h3>
+      <p>Get Pair Code / Session ID</p>
+    </div>
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Step 3</h3>
+      <p>Deploy and start using commands</p>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Showcase -->
+<section class="section" data-aos="fade-up">
+  <h2>Bot Features</h2>
+  <div class="grid-features">
+    <div class="card"><h3>🤖 Auto Reply</h3><p>24/7 instant responses.</p></div>
+    <div class="card"><h3>👥 Group Control</h3><p>Antilink, kick, mute, welcome.</p></div>
+    <div class="card"><h3>🎨 Media Tools</h3><p>Sticker, image & video tools.</p></div>
+    <div class="card"><h3>🧠 AI Powered</h3><p>ChatGPT, Gemini & image AI.</p></div>
+  </div>
+</section>
+
+<!-- Buy Panels -->
+<section class="section" id="buy-panels" data-aos="fade-up">
+  <h2>Buy Panels</h2>
+  <div class="grid-features">
+    <div class="card">
+      <h3>Basic Panel</h3>
+      <p>500 LKR</p>
+      <div class="buttons">
+        <a href="https://wa.me/94743400406?text=I%20want%20to%20buy%20a%20panel">Buy on WhatsApp</a>
+      </div>
+    </div>
+    <div class="card">
       <h3>Panel + Bot File</h3>
       <p>750 LKR</p>
-      <a href="https://wa.me/94743400406">Buy via WhatsApp</a>
+      <div class="buttons">
+        <a href="https://wa.me/94743400406?text=I%20want%20panel%20with%20bot%20file">Buy on WhatsApp</a>
+      </div>
     </div>
-    <div class="card buy">
-      <h3>Panel + Custom Name</h3>
+    <div class="card">
+      <h3>Custom Name Panel</h3>
       <p>1000 LKR</p>
-      <a href="https://wa.me/94743400406">Buy via WhatsApp</a>
+      <div class="buttons">
+        <a href="https://wa.me/94743400406?text=I%20want%20custom%20name%20panel">Buy on WhatsApp</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="commands">
-  <h2 data-aos="fade-up">Bot Commands</h2>
-  <div class="grid">
+<!-- Commands -->
+<section class="section" id="commands" data-aos="fade-up">
+  <h2>Bot Commands</h2>
+  <input type="text" id="commandSearch" placeholder="Search commands...">
+  <div class="grid-features" id="commandGrid">
+
     <div class="card">
-      <h3>General</h3>
+      <h3>🌐 General</h3>
       <ul>
         <li>.menu</li><li>.ping</li><li>.alive</li><li>.tts</li>
+        <li>.joke</li><li>.quote</li><li>.weather</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>Admin</h3>
+      <h3>👮 Admin</h3>
       <ul>
-        <li>.kick</li><li>.ban</li><li>.tagall</li><li>.antilink</li>
+        <li>.kick</li><li>.ban</li><li>.mute</li><li>.antilink</li>
+        <li>.welcome</li><li>.tagall</li>
       </ul>
     </div>
+
     <div class="card">
-      <h3>AI</h3>
+      <h3>🤖 AI</h3>
       <ul>
-        <li>.gpt</li><li>.gemini</li><li>.imagine</li>
+        <li>.gpt</li><li>.gemini</li><li>.imagine</li><li>.sora</li>
       </ul>
     </div>
+
+    <div class="card">
+      <h3>📥 Downloader</h3>
+      <ul>
+        <li>.play</li><li>.song</li><li>.spotify</li><li>.tiktok</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
+<!-- Community / Testimonials -->
+<section class="section" id="projects" data-aos="fade-up">
+  <h2>Community & Trust</h2>
+  <div class="testimonial">
+    “SENU MD V5 made WhatsApp automation easy for my groups.”
+  </div>
+  <div class="testimonial">
+    Join 500+ users using SENU MD panels daily.
+  </div>
+  <div class="buttons">
+    <a href="https://t.me/senumodz">Telegram</a>
+    <a href="https://github.com/senumodz">GitHub</a>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer id="contact">
-  © 2026 SENU MODZ • All Rights Reserved • MIT License <br><br>
+  © 2026 SENU MODZ • All Rights Reserved • License Protected <br>
   <a href="https://youtube.com/@senumodz">YouTube</a> |
   <a href="https://github.com/senumodz">GitHub</a> |
-  <a href="https://wa.me/94743400406">WhatsApp Support</a>
+  <a href="https://t.me/senumodz">Telegram</a>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- 🔊 BACKGROUND MUSIC (AUTO PLAY, NO CONTROLS) -->
+<audio id="bgMusic" autoplay loop>
+  <source src="assets/music/background.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-AOS.init({duration:1000,once:true});
+/* Force music play */
+const bgMusic = document.getElementById("bgMusic");
+window.addEventListener("load", () => {
+  bgMusic.play().catch(() => {});
+});
+document.addEventListener("click", () => {
+  bgMusic.play();
+}, { once: true });
+
+/* Command search */
+const searchInput = document.getElementById('commandSearch');
+const grid = document.getElementById('commandGrid');
+searchInput.addEventListener('keyup', () => {
+  const filter = searchInput.value.toLowerCase();
+  Array.from(grid.getElementsByClassName('card')).forEach(card => {
+    card.style.display = card.innerText.toLowerCase().includes(filter) ? '' : 'none';
+  });
+});
+
+/* Theme toggle */
+document.getElementById('themeToggle').addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+});
+
+/* AOS */
+AOS.init({ duration: 1000, once: true });
 </script>
 
 </body>
