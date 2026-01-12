@@ -2,114 +2,93 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<!-- IMPORTANT FOR MOBILE -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SENU MODZ</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 body {
   margin: 0;
-  background: black;
-  color: #00ffff;
-  font-family: Courier New, monospace;
-  overflow: hidden;
-  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a; /* dark blue */
+  color: #e5e7eb;
 }
 
 /* NAVBAR */
 nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 15px;
-  background: black;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  background: #020617;
 }
 
 nav a {
-  color: #00ffff;
-  margin: 0 15px;
+  color: #e5e7eb;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+nav a:hover {
+  color: #38bdf8;
 }
 
 /* HERO */
 .hero {
-  position: relative;
-  z-index: 1;
-  padding-top: 150px;
+  max-width: 900px;
+  margin: auto;
+  padding: 120px 20px;
+  text-align: center;
 }
 
 h1 {
-  font-size: 70px;
-  text-shadow: 0 0 20px #00ffff;
+  font-size: 56px;
+  margin-bottom: 10px;
 }
 
-#typing {
-  font-size: 26px;
-  color: #ccc;
-  margin-top: 15px;
+.subtitle {
+  font-size: 22px;
+  color: #94a3b8;
+}
+
+.tag {
+  margin: 30px 0;
+  font-size: 18px;
+  color: #38bdf8;
 }
 
 /* BUTTONS */
-.btn {
-  margin: 15px;
-  padding: 14px 32px;
-  border: 2px solid #00ffff;
-  color: #00ffff;
-  text-decoration: none;
-  border-radius: 30px;
+.buttons a {
   display: inline-block;
-  font-size: 20px;
+  margin: 10px;
+  padding: 14px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.btn:hover {
-  background: #00ffff;
-  color: black;
+.primary {
+  background: #38bdf8;
+  color: #020617;
 }
 
-/* MATRIX */
-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
+.secondary {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
 }
 
-/* 📱 MOBILE FIX */
+/* MOBILE */
 @media (max-width: 768px) {
-
-  nav a {
-    font-size: 16px;
-    margin: 0 10px;
-  }
-
   h1 {
-    font-size: 42px;
+    font-size: 40px;
   }
-
-  #typing {
-    font-size: 20px;
-  }
-
-  .hero {
-    padding-top: 120px;
-  }
-
-  .btn {
+  .subtitle {
     font-size: 18px;
-    padding: 16px 28px;
   }
 }
 </style>
 </head>
 
 <body>
-
-<canvas id="matrix"></canvas>
 
 <nav>
   <a href="index.html">Home</a>
@@ -119,59 +98,16 @@ canvas {
   <a href="admin.html">Admin</a>
 </nav>
 
-<div class="hero">
+<section class="hero">
   <h1>SENU MODZ</h1>
-  <div id="typing"></div>
+  <div class="subtitle">Bot Developer • Tech Enthusiast</div>
+  <div class="tag">SENU MD V5</div>
 
-  <a class="btn" href="mailto:senumodz@gmail.com">
-    <i class="fa-solid fa-envelope"></i> Email
-  </a>
-
-  <a class="btn" href="https://wa.me/94743400406" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-  </a>
-</div>
-
-<script>
-/* TYPING */
-const text = "Bot Developer | SENU MD V5 | TECH GUY / HACKER";
-let i = 0;
-function type() {
-  if (i < text.length) {
-    typing.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 60);
-  }
-}
-type();
-
-/* MATRIX EFFECT */
-const c = document.getElementById("matrix");
-const ctx = c.getContext("2d");
-c.width = innerWidth;
-c.height = innerHeight;
-
-const letters = "01";
-const fontSize = 16;
-const cols = c.width / fontSize;
-const drops = Array(Math.floor(cols)).fill(1);
-
-function draw() {
-  ctx.fillStyle = "rgba(0,0,0,0.05)";
-  ctx.fillRect(0, 0, c.width, c.height);
-  ctx.fillStyle = "#00ffcc";
-  ctx.font = fontSize + "px monospace";
-
-  drops.forEach((y, i) => {
-    const t = letters[Math.floor(Math.random() * letters.length)];
-    ctx.fillText(t, i * fontSize, y * fontSize);
-    if (y * fontSize > c.height && Math.random() > 0.95) drops[i] = 0;
-    drops[i]++;
-  });
-}
-
-setInterval(draw, 33);
-</script>
+  <div class="buttons">
+    <a class="primary" href="mailto:senumodz@gmail.com">Email</a>
+    <a class="secondary" href="https://wa.me/94743400406" target="_blank">WhatsApp</a>
+  </div>
+</section>
 
 </body>
 </html>
