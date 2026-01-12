@@ -9,8 +9,13 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #0f172a; /* dark blue */
   color: #e5e7eb;
+  background: 
+    linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.85)),
+    url("assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* NAVBAR */
@@ -19,7 +24,8 @@ nav {
   justify-content: center;
   gap: 25px;
   padding: 20px;
-  background: #020617;
+  background: rgba(2, 6, 23, 0.7);
+  backdrop-filter: blur(6px);
 }
 
 nav a {
@@ -36,7 +42,7 @@ nav a:hover {
 .hero {
   max-width: 900px;
   margin: auto;
-  padding: 120px 20px;
+  padding: 140px 20px;
   text-align: center;
 }
 
@@ -76,13 +82,16 @@ h1 {
   color: #38bdf8;
 }
 
-/* MOBILE */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
   }
   .subtitle {
     font-size: 18px;
+  }
+  .hero {
+    padding: 110px 20px;
   }
 }
 </style>
