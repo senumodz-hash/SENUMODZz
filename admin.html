@@ -1,54 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Admin Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | SENU MD V5</title>
 <style>
-body{
-  background:black;
-  color:#00ffcc;
-  font-family:Courier New;
-  text-align:center;
-  padding-top:150px;
-}
-input,button{
-  padding:12px;
-  margin:10px;
-  background:black;
-  border:1px solid #00ffcc;
-  color:#00ffcc;
-  font-size:18px;
-}
-button:hover{
-  background:#00ffcc;
-  color:black;
-}
+body{margin:0;font-family:Arial,sans-serif;color:#e5e7eb;text-align:center;padding-top:100px;
+background:linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url("assets/bg.jpg"); background-size:cover; background-position:center;}
+h1{font-size:42px;margin-bottom:30px; animation:fadeIn 1s ease forwards; opacity:0;}
+input,button{padding:14px;margin:10px;font-size:18px;border-radius:6px;border:1px solid #38bdf8;background:#020617;color:#e5e7eb;width:250px; transition:0.3s;}
+button:hover{background:#38bdf8;color:#020617;}
+@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+@media(max-width:768px){h1{font-size:34px;}input,button{width:200px;font-size:16px;}}
 </style>
 </head>
-
 <body>
-
 <h1>Admin Login</h1>
-
 <input id="user" placeholder="Username"><br>
 <input id="pass" type="password" placeholder="Password"><br>
 <button onclick="login()">Login</button>
-
 <p id="msg"></p>
 
 <script>
 function login(){
-  fetch(`/api/login?username=${user.value}&password=${pass.value}`)
-    .then(r=>r.json())
-    .then(d=>{
-      if(d.success){
-        document.body.innerHTML="<h1>Welcome Admin 🔓</h1>";
-      }else{
-        msg.innerText="Access Denied ❌";
-      }
-    });
+  const username=user.value, password=pass.value;
+  if(username==="admin" && password==="1234"){
+    document.body.innerHTML="<h1>Welcome Admin 🔓</h1>";
+  }else{
+    msg.innerText="Access Denied ❌";
+  }
 }
 </script>
-
 </body>
 </html>
