@@ -175,19 +175,23 @@
 </footer>
 
 <!-- 🔊 BACKGROUND MUSIC (AUTO PLAY, NO CONTROLS) -->
-<audio id="bgMusic" autoplay loop>
-  <source src="assets/music/background.mp3" type="audio/mpeg">
+<button id="playMusicBtn" style="position:fixed;bottom:20px;right:20px;z-index:1000;padding:10px 15px;">
+  ▶ Play Music
+</button>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-/* Force music play */
-const bgMusic = document.getElementById("bgMusic");
-window.addEventListener("load", () => {
-  bgMusic.play().catch(() => {});
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("playMusicBtn");
+
+btn.addEventListener("click", () => {
+  music.play();
+  btn.style.display = "none"; // hide button after play
 });
-document.addEventListener("click", () => {
-  bgMusic.play();
-}, { once: true });
+</script>
 
 /* Command search */
 const searchInput = document.getElementById('commandSearch');
