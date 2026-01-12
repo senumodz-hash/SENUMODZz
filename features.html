@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features | SENU MD V5</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  color:#e5e7eb;
+  background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url("assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align:center;
+}
+nav {
+  display:flex; justify-content:center; gap:20px; padding:15px;
+  background: rgba(2,6,23,0.7); backdrop-filter: blur(6px); position:sticky; top:0; z-index:10;
+}
+nav a { color:#e5e7eb; text-decoration:none; font-size:18px; padding:8px 12px; transition: color 0.3s; }
+nav a:hover { color:#38bdf8; }
+
+.section { max-width:900px; margin:auto; padding:80px 20px; }
+.section h2 { font-size:36px; color:#38bdf8; margin-bottom:25px; animation: fadeIn 1s ease forwards; opacity:0; }
+.card { background:#112240; border-radius:12px; padding:25px; margin-bottom:30px; box-shadow:0 5px 15px rgba(0,0,0,0.2); text-align:left; animation: fadeIn 1s ease forwards; opacity:0; }
+.card h3 { font-size:24px; color:#38bdf8; margin-bottom:12px; }
+.card p { font-size:18px; color:#cbd5e1; }
+
+@keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+
+@media(max-width:768px){
+  .section h2{font-size:28px;}
+  .card h3{font-size:20px;}
+  .card p{font-size:16px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="features.html">Features</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+  <a href="admin.html">Admin</a>
+</nav>
+
+<section class="section">
+  <h2>Bot Features</h2>
+  <div class="card">
+    <h3>Automated Messaging</h3>
+    <p>Send messages automatically, schedule replies, and save time on repetitive tasks.</p>
+  </div>
+  <div class="card">
+    <h3>Bot Management</h3>
+    <p>Control your bot easily from a clean dashboard with full customization.</p>
+  </div>
+  <div class="card">
+    <h3>Multi-Device Support</h3>
+    <p>Works on multiple WhatsApp accounts with advanced pairing system.</p>
+  </div>
+</section>
+</body>
+</html>
