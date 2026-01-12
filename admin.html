@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<style>
+body{
+  background:black;
+  color:#00ffcc;
+  font-family:Courier New;
+  text-align:center;
+  padding-top:150px;
+}
+input,button{
+  padding:12px;
+  margin:10px;
+  background:black;
+  border:1px solid #00ffcc;
+  color:#00ffcc;
+  font-size:18px;
+}
+button:hover{
+  background:#00ffcc;
+  color:black;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Admin Login</h1>
+
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
+
+<p id="msg"></p>
+
+<script>
+function login(){
+  fetch(`/api/login?username=${user.value}&password=${pass.value}`)
+    .then(r=>r.json())
+    .then(d=>{
+      if(d.success){
+        document.body.innerHTML="<h1>Welcome Admin 🔓</h1>";
+      }else{
+        msg.innerText="Access Denied ❌";
+      }
+    });
+}
+</script>
+
+</body>
+</html>
