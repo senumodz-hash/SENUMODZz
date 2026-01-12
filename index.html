@@ -3,120 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SENU MODZ</title>
+<title>SENU MD V5</title>
 
 <style>
+/* BODY + BACKGROUND */
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   color: #e5e7eb;
-  background: 
-    linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.85)),
-    url("assets/bg.jpg");
+  text-align: center;
+  background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url("assets/bg.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* NAVIGATION */
 nav {
   display: flex;
   justify-content: center;
-  gap: 25px;
-  padding: 20px;
-  background: rgba(2, 6, 23, 0.7);
+  gap: 20px;
+  padding: 15px;
+  background: rgba(2,6,23,0.7);
   backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 nav a {
   color: #e5e7eb;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
+  padding: 8px 12px;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #38bdf8;
-}
+nav a:hover { color: #38bdf8; }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   max-width: 900px;
   margin: auto;
-  padding: 140px 20px;
-  text-align: center;
+  padding: 120px 20px 80px 20px;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #38bdf8;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease forwards;
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 48px;
   margin-bottom: 10px;
+  animation: fadeIn 1s 0.3s ease forwards;
+  opacity: 0;
 }
 
 .subtitle {
   font-size: 22px;
   color: #94a3b8;
+  margin-bottom: 10px;
+  animation: fadeIn 1s 0.6s ease forwards;
+  opacity: 0;
 }
 
 .tag {
-  margin: 30px 0;
-  font-size: 18px;
+  font-size: 20px;
   color: #38bdf8;
+  margin: 25px 0;
+  animation: fadeIn 1s 0.9s ease forwards;
+  opacity: 0;
 }
 
 /* BUTTONS */
 .buttons a {
   display: inline-block;
-  margin: 10px;
-  padding: 14px 30px;
+  margin: 12px;
+  padding: 14px 28px;
   border-radius: 8px;
+  font-size: 18px;
   text-decoration: none;
-  font-size: 16px;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-.primary {
-  background: #38bdf8;
-  color: #020617;
-}
+.primary { background:#38bdf8; color:#020617; }
+.secondary { border:2px solid #38bdf8; color:#38bdf8; }
 
-.secondary {
-  border: 1px solid #38bdf8;
-  color: #38bdf8;
-}
+.buttons a:hover { transform: translateY(-3px); opacity: 0.9; }
 
-/* 📱 MOBILE */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 40px;
-  }
-  .subtitle {
-    font-size: 18px;
-  }
-  .hero {
-    padding: 110px 20px;
-  }
+/* FADE-IN ANIMATION */
+@keyframes fadeIn { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+
+/* MOBILE */
+@media (max-width:768px){
+  h1 { font-size:36px; }
+  .subtitle { font-size:18px; }
+  .tag { font-size:18px; }
+  .buttons a { font-size:16px; padding:12px 20px; }
+  .profile-img { width:120px; height:120px; }
 }
 </style>
 </head>
 
 <body>
-
 <nav>
   <a href="index.html">Home</a>
-  <a href="about.html">About</a>
+  <a href="features.html">Features</a>
   <a href="projects.html">Projects</a>
   <a href="contact.html">Contact</a>
   <a href="admin.html">Admin</a>
 </nav>
 
 <section class="hero">
-  <h1>SENU MODZ</h1>
-  <div class="subtitle">Bot Developer • Tech Enthusiast</div>
-  <div class="tag">SENU MD V5</div>
+  <!-- PROFILE IMAGE -->
+  <img src="assets/profile.png" alt="SENU MODZ" class="profile-img">
+
+  <h1>SENU MD V5</h1>
+  <div class="subtitle">Advanced WhatsApp Bot & Automation Dashboard</div>
+  <div class="tag">Tech | Automation | Bots</div>
 
   <div class="buttons">
     <a class="primary" href="mailto:senumodz@gmail.com">Email</a>
     <a class="secondary" href="https://wa.me/94743400406" target="_blank">WhatsApp</a>
   </div>
 </section>
-
 </body>
 </html>
