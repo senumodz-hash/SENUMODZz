@@ -5,57 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Projects | SENU MD V5</title>
 <style>
-body {
-  margin:0; font-family: Arial, sans-serif; color:#e5e7eb;
-  background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url("assets/bg.jpg");
-  background-size: cover; background-position: center; background-attachment: fixed; text-align:center;
-}
-nav { display:flex; justify-content:center; gap:20px; padding:15px; background: rgba(2,6,23,0.7); backdrop-filter: blur(6px); position:sticky; top:0; z-index:10;}
-nav a{color:#e5e7eb;text-decoration:none;font-size:18px;padding:8px 12px; transition:color 0.3s;}
-nav a:hover{color:#38bdf8;}
-
-h1{margin-top:50px;font-size:48px; animation:fadeIn 1s ease forwards; opacity:0;}
-
-.card { background:#112240; border-radius:12px; padding:25px; margin:30px auto; max-width:650px; text-align:left; box-shadow:0 5px 15px rgba(0,0,0,0.2); transition: transform 0.3s; animation:fadeIn 1s ease forwards; opacity:0;}
-.card:hover { transform: translateY(-5px); }
-.card h2{ font-size:28px; color:#38bdf8; margin-bottom:10px; }
-.card p{ font-size:20px; color:#cbd5e1; margin-bottom:12px; }
-.card a{ display:inline-block; margin:6px; padding:12px 24px; border-radius:8px; font-size:18px; text-decoration:none; }
-.primary{ background:#38bdf8; color:#020617; }
-.secondary{ border:2px solid #38bdf8; color:#38bdf8; }
-.card a:hover{opacity:0.9;}
-
-@keyframes fadeIn { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
-
-@media(max-width:768px){
-  h1{font-size:36px;}
-  .card h2{font-size:24px;}
-  .card p{font-size:18px;}
-  .card a{font-size:16px;padding:10px 20px;}
-}
+/* SAME CSS AS INDEX.HTML */
 </style>
 </head>
 <body>
+<div class="grid"></div>
 <nav>
-  <a href="index.html">Home</a>
-  <a href="features.html">Features</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-  <a href="admin.html">Admin</a>
+<a href="index.html">Home</a>
+<a href="features.html">Features</a>
+<a href="projects.html">Projects</a>
+<a href="contact.html">Contact</a>
+<a href="admin.html">Admin</a>
 </nav>
-
-<h1>My Projects</h1>
-
+<section class="section">
+<h2>My Projects</h2>
 <div class="card">
-  <h2>SENU MD V5</h2>
-  <p>Advanced WhatsApp automation bot with full performance and control features.</p>
-  <a href="#" class="primary">View Details</a>
+<h3>SENU MD V5</h3>
+<p>Advanced WhatsApp automation bot with full performance and control features.</p>
 </div>
-
 <div class="card">
-  <h2>Knight Bot (PairCode)</h2>
-  <p>A live bot dashboard & pairing interface hosted on Render.</p>
-  <a href="https://knight-bot-paircode.onrender.com/" target="_blank" class="primary">Visit Website</a>
+<h3>Knight Bot (PairCode)</h3>
+<p>A live bot dashboard & pairing interface hosted on Render.</p>
+<a href="https://knight-bot-paircode.onrender.com/" target="_blank" class="buttons a">Visit Website</a>
 </div>
+</section>
 </body>
 </html>
